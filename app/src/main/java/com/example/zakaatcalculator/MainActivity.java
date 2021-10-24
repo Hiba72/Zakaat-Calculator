@@ -30,14 +30,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                        double add=Double.parseDouble(cashAtHome.getText().toString())+Double.parseDouble(cashInBank.getText().toString())+Double.parseDouble(goldSilver.getText().toString());
                        double total=add-Double.parseDouble(debt.getText().toString());
-                       double zakaatMoney=total*0.025;
-                       if(zakaatMoney>=682387.90) {
+                       if(total>=682387.90){
+                           double zakaatMoney=total*0.025;
                            String payableZakaat = String.format("Your Zakaat is: %s PKR", zakaatMoney);
                            finalValue.setText(payableZakaat);
                        }
-                       else if(zakaatMoney<682387.90){
+                       else{
                            finalValue.setText("You don't have to pay zakaat");
                        }
+
+
                     }
                 }
         );
