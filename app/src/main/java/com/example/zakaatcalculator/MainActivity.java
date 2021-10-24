@@ -35,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
                            String payableZakaat = String.format("Your Zakaat is: %s PKR", zakaatMoney);
                            finalValue.setText(payableZakaat);
                        }
-                       else{
-                           String noZakaat = String.format("You don't have to pay Zakaat");
-                           finalValue.setText(noZakaat);
+                       else if(zakaatMoney<682387.90){
+                           finalValue.setText("You don't have to pay zakaat");
                        }
                     }
                 }
